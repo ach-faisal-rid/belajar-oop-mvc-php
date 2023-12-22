@@ -7,12 +7,12 @@ class App {
     public function __construct() {
         
         $url = $this->parse_url();
-        if($url && is_array($url) && file_exists('../app/controllers/' . $url[0] . '.php')) {
+        if($url && is_array($url) && file_exists('../app/Controllers/' . $url[0] . '.php')) {
             $this->controller = $url[0];
             unset($url[0]);
         }
         
-        require_once '../app/controllers/' . $this->controller . '.php';
+        require_once '../app/Controllers/' . $this->controller . '.php';
         $this->controller = new $this->controller;
 
         // method
