@@ -1,30 +1,22 @@
 <?php
 
 class Siswa_model {
-    private $siswa = [ 
-        [
-            "nama" => "Yessi Pratiwi",
-            "nisn" => 141295990,
-            "email" => "inasyidah@hartati.org",
-            "jurusan" => "rekayasa perangkat lunak"
-        ],
-        [
-            "nama" => "Uci Puspita",
-            "nisn" => 141291641,
-            "email" => "imardhiyah@yahoo.co.id",
-            "jurusan" => "multimedia"
-        ],
-        [
-            "nama" => "Hairyanto",
-            "nisn" => 141218318,
-            "email" => "utami.qori@permata.co.id",
-            "jurusan" => "rekayasa perangkat lunak"
-        ],
-        
-    ];
+    private $db;
+    private $stmt;
+    public function __construct() {
+        $db = 'mysql:host=localhost;dbname=bookshelf';
+
+        try {
+            $this->db = new PDO($db , 'root', 'root');
+        } catch (PDOException $e) {
+            die($e->getMessage());
+        }
+    }
 
     public function getAllSiswa() {
-        return $this->siswa;
+        $this->stmt = $this->db->prepare('SELECT * FROM siswa');
+        $this->stmt->execute();
+        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
 }
