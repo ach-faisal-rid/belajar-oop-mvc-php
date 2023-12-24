@@ -32,5 +32,14 @@ class Siswa_model {
 
         return $this->db->rowCount();
     }
-    
+    public function hapusDataSiswa($id) {
+        $query = "DELETE FROM siswa WHERE id = :id";
+        
+        $this->db->query($query);
+        $this->db->bind('id', $id);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }
