@@ -1,3 +1,3 @@
 <?php
 
-define('BASEURL', 'http://smkti.test:8080/belajar-oop-mvc-php/public/');
+define('BASEURL', 'http://localhost:8080/smkti/belajar-oop-mvc-php/public/');

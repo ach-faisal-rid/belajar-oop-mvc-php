@@ -1,22 +1,21 @@
 <?php
 
 class Siswa_model {
+    private $table = 'siswa';
     private $db;
-    private $stmt;
     public function __construct() {
-        $db = 'mysql:host=localhost;dbname=bookshelf';
-
-        try {
-            $this->db = new PDO($db , 'root', 'root');
-        } catch (PDOException $e) {
-            die($e->getMessage());
-        }
+        $this->db = new Database;
     }
 
     public function getAllSiswa() {
-        $this->stmt = $this->db->prepare('SELECT * FROM siswa');
-        $this->stmt->execute();
-        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+        $this->db->query('SELECT * FROM ' . $this->table);
+        return $this->db->resultSet();
     }
+
+    public function getSiswaById($id) {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+        $this->db->bind('id', $id);
+        return $this->db->single();
+    }    
     
 }
