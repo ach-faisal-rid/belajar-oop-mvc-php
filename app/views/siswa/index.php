@@ -1,14 +1,21 @@
 <div class="container mt-5">
+    
+    <div class="row">
+        <div class="col-lg-6">
+            <?php Flasher::flash();  ?>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-6">
 
-        <div class="row mb-3">
-            <div class="col-lg-6">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">
-                Tambah Siswa
-                </button>
+            <div class="row mb-3">
+                <div class="col-lg-6">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">
+                    Tambah Siswa
+                    </button>
+                </div>
             </div>
-        </div>
 
             <h3>Daftar Siswa</h3>
             <ul class="list-group">
