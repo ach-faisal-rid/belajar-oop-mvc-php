@@ -1,32 +1,32 @@
 $(function() {
 
-    $('.tombolTambahData').on('click', function() {
-        $('#formModalLabel').html('Tambah Data Mahasiswa');
+    $('.btnTambahData').on('click', function() {
+        $('#formModalLabel').html('Tambah Data Siswa');
         $('.modal-footer button[type=submit]').html('Tambah Data');
         $('#nama').val('');
-        $('#nrp').val('');
+        $('#nisn').val('');
         $('#email').val('');
         $('#jurusan').val('');
         $('#id').val('');
     });
 
 
-    $('.tampilModalUbah').on('click', function() {
+    $('.btnUbahData').on('click', function() {
         
-        $('#formModalLabel').html('Ubah Data Mahasiswa');
+        $('#formModalLabel').html('Ubah Data Siswa');
         $('.modal-footer button[type=submit]').html('Ubah Data');
-        $('.modal-body form').attr('action', 'http://localhost/phpmvc/public/mahasiswa/ubah');
+        $('.modal-body form').attr('action', 'http://localhost:8080/smkti/belajar-oop-mvc-php/public/siswa/ubah');
 
         const id = $(this).data('id');
         
         $.ajax({
-            url: 'http://localhost/phpmvc/public/mahasiswa/getubah',
+            url: 'http://localhost:8080/smkti/belajar-oop-mvc-php/public/siswa/getubah',
             data: {id : id},
             method: 'post',
             dataType: 'json',
             success: function(data) {
                 $('#nama').val(data.nama);
-                $('#nrp').val(data.nrp);
+                $('#nisn').val(data.nisn);
                 $('#email').val(data.email);
                 $('#jurusan').val(data.jurusan);
                 $('#id').val(data.id);

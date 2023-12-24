@@ -11,7 +11,7 @@
 
             <div class="row mb-3">
                 <div class="col-lg-6">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">
+                    <button type="button" class="btn btn-primary btnTambahData" data-toggle="modal" data-target="#formModal">
                     Tambah Siswa
                     </button>
                 </div>
@@ -23,6 +23,7 @@
                     <li class="list-group-item">
                         <?= $siswa['nama'] ?>
                         <a href="<?= BASEURL; ?>/Siswa/hapus/<?= $siswa['id']; ?>" class="badge badge-danger float-right ml-2" onclick="return confirm('yakin ?');">delete</a>
+                        <a href="<?= BASEURL; ?>/Siswa/ubah/<?= $siswa['id']; ?>" class="badge badge-warning float-right ml-2 btnUbahData" data-toggle="modal" data-target="#formModal" data-id="<?= $siswa['id']; ?>">ubah</a>
                         <a href="<?= BASEURL; ?>/Siswa/detail/<?= $siswa['id']; ?>" class="badge badge-info float-right ml-2">detail</a>
                     </li>
                 <?php endforeach; ?>
@@ -44,7 +45,7 @@
       </div>
       <div class="modal-body">
         <form action="<?= BASEURL; ?>siswa/tambah" method="post">
-            
+        <input type="hidden" name="id" id="id">
             <div class="form-group">
                 <label for="nama">Nama</label>
                 <input type="text" class="form-control" id="nama" name="nama" autocomplete="off" required>
