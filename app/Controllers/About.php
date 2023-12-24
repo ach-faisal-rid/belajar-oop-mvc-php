@@ -6,9 +6,9 @@ class About extends Controller {
         $data['pekerjaan'] = $pekerjaan;
         $data['usia'] = $usia;
         $data['judul'] = 'About';
-        $this->view('theme/header', $data);
+        $this->view('theme/header-custom', $data);
         $this->view('about/index', $data);
-        $this->view('theme/footer');
+        $this->view('theme/footer-custom');
     }
     public function page() {
         echo 'About/page';
