@@ -10,3 +10,5 @@ bootstrap 4.1
 
 ### database 
 seperti biasa cara uploadnya lewat phpmyadmin
+database ada di folder db 
+<li>bookshelf.sql</li>
