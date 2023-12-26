@@ -26,4 +26,15 @@ class book extends Controller {
             exit;
         }
     }
+    public function hapus($id) {
+        if($this->model('book_model')->hapusDataBook($id) > 0 ) {
+            Flasher::setFlash('berhasil', 'dihapus', 'success');
+            header('Location: ' . BASEURL . '/book');
+            exit;
+        } else {
+            Flasher::setFlash('gagal', 'dihapus', 'danger');
+            header('Location: ' . BASEURL . '/book');
+            exit;
+        }
+    }
 }

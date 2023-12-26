@@ -1,5 +1,6 @@
 $(function() {
 
+    // tambah data siswa
     $('.btnTambahData').on('click', function() {
         $('#formModalLabel').html('Tambah Data Siswa');
         $('.modal-footer button[type=submit]').html('Tambah Data');
@@ -10,7 +11,18 @@ $(function() {
         $('#id').val('');
     });
 
+    // tambah data buku
+    $('.btnTambahDataBook').on('click', function() {
+        $('#formModalLabel').html('Tambah Data buku');
+        $('.modal-footer button[type=submit]').html('Tambah Data');
+        $('#title').val('');
+        $('#year').val('');
+        $('#author').val('');
+        $('#isComplete').val('');
+        $('#id').val('');
+    });
 
+    // ubah data siswa
     $('.btnUbahData').on('click', function() {
         
         $('#formModalLabel').html('Ubah Data Siswa');

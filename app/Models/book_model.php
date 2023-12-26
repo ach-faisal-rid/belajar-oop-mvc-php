@@ -15,7 +15,15 @@ class Book_model {
         $this->db->bind('id', $id);
         return $this->db->single();
     }
-    public function tambahDataBook($data) {
+    
+    public function hapusDataBook($id) {
+        $query = "DELETE FROM book WHERE id = :id";
         
+        $this->db->query($query);
+        $this->db->bind('id', $id);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
     }
 }

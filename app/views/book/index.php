@@ -1,5 +1,11 @@
 <div class="container mt-5">
     <div class="row">
+        <div class="col-lg-6">
+            <?php Flasher::flash();  ?>
+        </div>
+    </div>
+    
+    <div class="row">
         <div class="col-6">
 
             <div class="row mb-3">
@@ -15,9 +21,9 @@
                 <?php foreach ($data['book'] as $book) : ?>
                     <li class="list-group-item">
                         <?= $book['title'] ?>
-                        <a href="#" class="badge badge-danger float-right ml-2" onclick="return confirm('yakin ?');">delete</a>
-                        <a href="<?= BASEURL; ?>/Book/ubah/<?= $book['id']; ?>" class="badge badge-warning float-right ml-2 btnUbahData" data-toggle="modal" data-target="#formModal" data-id="#">ubah</a>
-                        <a href="<?= BASEURL; ?>/Book/detail/<?= $book['id']; ?>" class="badge badge-info float-right ml-2">detail</a>
+                        <a href="<?= BASEURL; ?>Book/hapus/<?= $book['id']; ?>" class="badge badge-danger float-right ml-2" onclick="return confirm('yakin ?');">delete</a>
+                        <a href="<?= BASEURL; ?>Book/ubah/<?= $book['id']; ?>" class="badge badge-warning float-right ml-2 " data-toggle="modal" data-target="#formModal" data-id="#">ubah</a>
+                        <a href="<?= BASEURL; ?>Book/detail/<?= $book['id']; ?>" class="badge badge-info float-right ml-2">detail</a>
                     </li>
                 <?php endforeach; ?>
             </ul>
