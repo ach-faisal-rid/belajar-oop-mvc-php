@@ -5,8 +5,8 @@
 # belajar-php-mvc
 
 ### yang saya pakai
-php 8
-bootstrap 4.1
+<li>php 8</li>
+<li>bootstrap 4.1</li>
 
 ### database 
 seperti biasa cara uploadnya lewat phpmyadmin
